@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteCond %{REQUEST_URI} (gif|jpg|jpeg|jpe|png|js|css)$
+RewriteRule ^.*$ 404.php [NC,L]
+
+RewriteRule ^.*$ index.php [NC,L]

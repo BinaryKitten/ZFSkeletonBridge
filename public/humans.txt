@@ -1,0 +1,7 @@
+/* TEAM */                     
+Project Developer: Kathryn Reeve <Kathryn@BinaryKitten.com> 
+                           
+/* SITE */
+Last update: 2012/08/08
+Components: jQuery, Twitter Bootstrap, Zend Framework 1
+Software: Netbeans, Sublime
