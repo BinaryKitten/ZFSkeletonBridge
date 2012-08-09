@@ -8,8 +8,9 @@ if (($zf_LibPath = getenv('ZF_LIBPATH') ?: (is_dir('./library') ? './library' : 
     $config = array(
         'Zend_Loader_StandardAutoloader' => array(
             'prefixes' => array(
-                'Zend_'     => './library/Zend',
                 'Bridge_'   => './library/Bridge',
+                'Zend_'     => './library/Zend',
+                'ZendX_'    => './library/ZendX',
             ),
             'fallback_autoloader' => true,
         ),

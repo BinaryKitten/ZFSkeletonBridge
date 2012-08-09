@@ -12,9 +12,10 @@ return array(
         'class' => 'Bootstrap'
     ),
     'appnamespace' => 'Application',
-//    'pluginPaths' => array(
-//        'ZendX_Application_Resource' => 'ZendX/Application/Resource',
-//    ),
+    'pluginPaths' => array(
+        'Bridge_Application_Resouce' => 'Bridge/Application/Resource',
+        'ZendX_Application_Resource' => 'ZendX/Application/Resource',
+    ),
     'resources' => array(
         'frontController'           => array(
             'controllerDirectory'   => './application/controllers',
