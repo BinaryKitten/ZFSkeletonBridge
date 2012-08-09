@@ -5,19 +5,25 @@ if (($zf_LibPath = getenv('ZF_LIBPATH') ?: (is_dir('./library') ? './library' : 
     include $zf_LibPath . '/Zend/Loader/AutoloaderFactory.php';
     include $zf_LibPath . '/Bridge/Stdlib/ArrayUtils.php';
 
-    if (file_exists('./application/configs/autoloader.config')) {
-        $override_config = include('./application/configs/autoloader.config')
-    }
-
-    Zend_Loader_AutoloaderFactory::factory(array(
+    $config = array(
         'Zend_Loader_StandardAutoloader' => array(
             'prefixes' => array(
                 'Zend_'     => './library/Zend',
                 'Bridge_'   => './library/Bridge',
             ),
-            'autoregister_zf' => true
-        )
-    ));
+            'fallback_autoloader' => true,
+        ),
+        'Zend_Loader_ClassMapAutoloader' => array(
+            './library/autoload_classmap.php',
+            './application/autoload_classmap.php'
+        ),
+    );
+    if (file_exists('./application/configs/autoloader.config')) {
+        $override_config = include('./application/configs/autoloader.config');
+        $config = Bridge_Stdlib_ArrayUtils::merge($config, $override_config);
+    }
+
+    Zend_Loader_AutoloaderFactory::factory($config);
 }
 
 if (!class_exists('Zend_Loader_AutoloaderFactory')) {
