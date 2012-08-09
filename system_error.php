@@ -6,7 +6,7 @@ header('HTTP/1.1 500 Internal Server Error'); ?>
         <title>System Error</title>
     </head>
     <body>
-        <h1>Error Loading Site</h1>';
+        <h1>Error Loading Site</h1>
         <p><strong>Message:</strong><br /><pre><?php echo $systemException->getMessage(); ?></pre></p>
         <?php if (isset($_GET['debug'])):
             printf('(%s) %s: %s', $systemException->getCode(), $systemException->getFile(), $systemException->getLine());
