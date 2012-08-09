@@ -2,15 +2,16 @@
 
 // Support for ZF_PATH environment variable
 if (($zf_LibPath = getenv('ZF_LIBPATH') ?: (is_dir('./library') ? './library' : false)) !== false) {
-    include $zf_LibPath . '/Zend/Loader/AutoloaderFactory.php';
-    include $zf_LibPath . '/Bridge/Stdlib/ArrayUtils.php';
+    set_include_path(implode(PATH_SEPARATOR, array(realpath($zf_LibPath))));
+    include 'Zend/Loader/AutoloaderFactory.php';
+    include 'Bridge/Stdlib/ArrayUtils.php';
 
     $config = array(
         'Zend_Loader_StandardAutoloader' => array(
             'prefixes' => array(
-                'Bridge_'   => './library/Bridge',
-                'Zend_'     => './library/Zend',
-                'ZendX_'    => './library/ZendX',
+                'Bridge_'   => 'Bridge',
+                'Zend_'     => 'Zend',
+                'ZendX_'    => 'ZendX',
             ),
             'fallback_autoloader' => true,
         ),
