@@ -8,13 +8,13 @@
     <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
     <!-- Le styles -->
-    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->themeasset()->image('favicon.ico')))
-                    ->appendStylesheet($this->themeasset()->css('bootstrap.min.css'))
-                    ->appendStylesheet($this->themeasset()->css('bootstrap-responsive.min.css')); ?>
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => '/images/favicon.ico'))
+                    ->appendStylesheet('/css/bootstrap.min.css')
+                    ->appendStylesheet('/css/bootstrap-responsive.min.css'); ?>
 
     <!-- Scripts -->
-    <?php echo $this->headScript()->appendFile($this->themeasset()->js('html5.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
-                                  ->appendFile($this->themeasset()->js('jquery-1.7.2.min.js')); ?>
+    <?php echo $this->headScript()->appendFile('/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                                  ->appendFile('/js/jquery-1.7.2.min.js'); ?>
     <link rel="author" href="humans.txt" />
   </head>
 
