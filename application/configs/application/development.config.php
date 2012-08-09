@@ -6,10 +6,10 @@ return array(
     ),
     'resources' => array(
         'frontController' => array(
-            'params' => array(
+            'throwexceptions'   => FALSE,
+            'params'            => array(
                 'displayExceptions' => 1
             ),
-            'throwexceptions' => FALSE,
         ),
     )
 );
