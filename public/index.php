@@ -5,7 +5,7 @@
 
     try {
         include 'init_autoloader.php';
-        Bridge_Application::init()->boostrap()->run();
+        Bridge_Application::init()->bootstrap()->run();
     } catch(Exception $systemException) {
         include ('system_error.php');
     }
