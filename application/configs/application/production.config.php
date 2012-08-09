@@ -30,11 +30,11 @@ return array(
             'contentType'   => 'text/html; charset=UTF-8',
             'doctype'       => 'HTML5',
             'helperPath'    => array(
-                'Bridge_View_Helper_' => 'Bridge/View/Helper/'
+                'Bridge_View_Helper_' => 'Bridge/View/Helper'
             )
         ),
         'layout' => array(
-            'layoutPath' => './application/layouts/scripts/'
+            'layoutPath' => './application/layouts/scripts'
         ),
         'locale' => array(
             'default' => 'en_GB',
