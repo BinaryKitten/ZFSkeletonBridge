@@ -1,0 +1,54 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <?php echo $this->headTitle('ZFBridge '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+    <!-- Le styles -->
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->themeasset()->image('favicon.ico')))
+                    ->appendStylesheet($this->themeasset()->css('bootstrap.min.css'))
+                    ->appendStylesheet($this->themeasset()->css('bootstrap-responsive.min.css')); ?>
+
+    <!-- Scripts -->
+    <?php echo $this->headScript()->appendFile($this->themeasset()->js('html5.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+                                  ->appendFile($this->themeasset()->js('jquery-1.7.2.min.js')); ?>
+    <link rel="author" href="humans.txt" />
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <?php echo $this->layout()->content; ?>
+
+      <hr>
+
+      <footer>
+        <p>by BinaryKitten.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

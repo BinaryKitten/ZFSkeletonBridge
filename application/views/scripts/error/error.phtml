@@ -1,0 +1,33 @@
+<h1>An error occurred</h1>
+<h2><?php echo $this->message ?></h2>
+
+<?php if (isset($this->exception)): ?>
+
+<h3>Exception information:</h3>
+<p>
+    <b>Message:</b> <?php echo $this->exception->getMessage(); ?>
+</p>
+
+<h3>Stack trace:</h3>
+<pre><?php echo $this->exception->getTraceAsString() ?>
+</pre>
+
+<h3>Request Parameters:</h3>
+<pre><?php echo var_export($this->request->getParams(), true) ?>
+</pre>
+
+<h3>DB Profile:</h3>
+<?php
+$db = Zend_Db_Table_Abstract::getDefaultAdapter();
+if ($profiler = $db->getProfiler()):
+?>
+<ul>
+  <li>Total # Queries: <?=$profiler->getTotalNumQueries();?></li>
+  <li>Total Elapsed Seconds: <?=$profiler->getTotalElapsedSecs();?></li>
+</ul>
+<?php if ($profiles = $profiler->getQueryProfiles()) { foreach ($profiles as $query) {?>
+      <pre><?=$query->getQuery()?></pre>
+<?php } } ?>
+<?php endif ?>
+
+<?php endif ?>
