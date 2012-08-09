@@ -7,6 +7,10 @@ if (($zf_LibPath = getenv('ZF_LIBPATH') ?: (is_dir('./library') ? './library' : 
     include 'Bridge/Stdlib/ArrayUtils.php';
 
     $config = array(
+        'Zend_Loader_ClassMapAutoloader' => array(
+            './library/autoload_classmap.php',
+            './application/autoload_classmap.php'
+        ),
         'Zend_Loader_StandardAutoloader' => array(
             'prefixes' => array(
                 'Bridge_'   => 'Bridge',
@@ -14,10 +18,6 @@ if (($zf_LibPath = getenv('ZF_LIBPATH') ?: (is_dir('./library') ? './library' : 
                 'ZendX_'    => 'ZendX',
             ),
             'fallback_autoloader' => true,
-        ),
-        'Zend_Loader_ClassMapAutoloader' => array(
-            './library/autoload_classmap.php',
-            './application/autoload_classmap.php'
         ),
     );
     if (file_exists('./application/configs/autoloader.config')) {
