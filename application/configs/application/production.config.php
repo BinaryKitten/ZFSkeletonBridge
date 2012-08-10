@@ -1,5 +1,13 @@
 <?php
 return array(
+    'appnamespace' => 'Application',
+    'includePaths' => array(
+        'library'   => './library',
+    ),
+    'bootstrap' => array(
+        'path'  => './application/Bootstrap.php',
+        'class' => 'Bootstrap'
+    ),
     'phpSettings' => array(
         'display_startup_errors'    => 0,
         'display_errors'            => 0,
@@ -7,11 +15,6 @@ return array(
             'timezone' => 'UTC'
         )
     ),
-    'bootstrap' => array(
-        'path'  => './application/Bootstrap.php',
-        'class' => 'Bootstrap'
-    ),
-    'appnamespace' => 'Application',
     'pluginPaths' => array(
         'Bridge_Application_Resouce' => 'Bridge/Application/Resource',
         'ZendX_Application_Resource' => 'ZendX/Application/Resource',
