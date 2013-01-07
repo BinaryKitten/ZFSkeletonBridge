@@ -4,8 +4,9 @@
     defined('APPLICATION_ENV')  || define('APPLICATION_ENV',    (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
 
     try {
-        include 'init_autoloader.php';
+        require 'init_autoloader.php';
         Bridge_Application::init()->bootstrap()->run();
     } catch(Exception $systemException) {
-        include ('system_error.php');
+        require 'system_error.php';
     }
+    
